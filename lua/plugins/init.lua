@@ -62,24 +62,5 @@ lvim.plugins = {
     requires = {
         "mfussenegger/nvim-dap"
     },
-  },
-  {
-    "natecraddock/workspaces.nvim",
-    config = function ()
-      require("workspace").setup({
-        hooks = {
-          open = function ()
-            vim.ui.input('Would you like to load workspace configuration?', function (confirm)
-              if confirm ~= 'n' or confirm ~= 'N' then
-                return
-              end
-              local cwd = vim.fn.getcwd()
-              package.path = package.path .. ';' .. cwd .. '/.neovim/lua/?.lua'
-              require(cwd .. '.neovim/init')
-            end)
-          end
-        }
-      })
-    end
   }
 }
