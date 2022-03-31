@@ -1,6 +1,6 @@
 require('plugins.alpha').config()
 require('plugins.nvimtree').config()
-
+require('keybindings')
 
 lvim.plugins = {
   {
@@ -31,13 +31,13 @@ lvim.plugins = {
   },
 
   {
-    "github/copilot.vim"
+    "github/copilot.vim",
   },
   {
-    "lambdalisue/suda.vim"
+    "lambdalisue/suda.vim",
   },
   {
-    'aspeddro/tex.nvim',
+    "aspeddro/tex.nvim",
      config = function()
         require'tex'.setup{
           engine = 'tectonic',
@@ -62,5 +62,20 @@ lvim.plugins = {
     requires = {
         "mfussenegger/nvim-dap"
     },
+  },
+  {
+    'lervag/vimtex',
+    opt = true,
+    config = function ()
+      vim.g.vimtex_view_method = 'zathura'
+      vim.g.vimtex_view_general_viewer = 'zathura'
+      vim.g.vimtex_compiler_latexmk_engines = {
+        _ = '-xelatex'
+      }
+      vim.g.tex_comment_nospell = 1
+      vim.g.vimtex_compiler_progname = 'nvr'
+      vim.g.vimtex_view_general_options = [[--unique file:@pdf\#src:@line@tex]]
+    end,
+    ft = 'tex'
   }
 }

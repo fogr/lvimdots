@@ -14,13 +14,16 @@ lvim.colorscheme = "catppuccin"
 lvim.leader = "space"
 require('plugins')
 require('enhancements.project')
--- require('enhancements')
+-- require('configurations.enable_ssh')
 lvim.builtin.dap.active = true
 lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.project.active = true
+
 vim.g.copilot_no_tab_map = 1
 vim.g.copilot_assume_mapped = 1
+
+
 vim.opt.relativenumber = true
 lvim.builtin.treesitter.ensure_installed = {
   "bash",
@@ -39,4 +42,3 @@ lvim.builtin.treesitter.ensure_installed = {
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
-
