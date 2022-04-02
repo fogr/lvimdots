@@ -1,5 +1,5 @@
-local Alpha = {}
-Alpha.config = function ()
+local M = {}
+M.config = function ()
   lvim.builtin.alpha.active = true
   lvim.builtin.alpha.mode = "dashboard"
   lvim.builtin.alpha.dashboard.section.header.val = {
@@ -11,4 +11,4 @@ Alpha.config = function ()
    ' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
   }
 end
-return Alpha
+return M
