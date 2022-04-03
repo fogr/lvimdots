@@ -61,8 +61,13 @@ lvim.plugins = {
     'sindrets/diffview.nvim',
     event = 'BufRead',
     requires = 'nvim-lua/plenary.nvim' ,
-    setup = function ()
+    config = function ()
       require("inclyc.core.diffv").setup()
     end
+  },
+  {
+    'bfredl/nvim-ipy',
+    opt = true,
+    ft = 'python'
   }
 }
