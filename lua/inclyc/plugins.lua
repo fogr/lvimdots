@@ -9,7 +9,7 @@ lvim.plugins = {
     event = "BufRead",
     config = function()
       require("hop").setup()
-      vim.api.nvim_set_keymap("n", "s", ":HopChar2<cr>", { silent = true })
+      vim.api.nvim_set_keymap("n", "s", ":HopChar1<cr>", { silent = true })
       vim.api.nvim_set_keymap("n", "S", ":HopWord<cr>", { silent = true })
     end
   },
@@ -66,8 +66,7 @@ lvim.plugins = {
     end
   },
   {
-    'bfredl/nvim-ipy',
-    opt = true,
-    ft = 'python'
+    "goerz/jupytext.vim",
+    config = require("inclyc.core.jupytext").config
   }
 }
