@@ -22,5 +22,10 @@ M.config = function ()
 
   lvim.builtin.treesitter.ignore_install = { "haskell" }
   lvim.builtin.treesitter.highlight.enabled = true
+  lvim.builtin.notify.active = true
+  lvim.builtin.terminal.active = true
 end
 return M
+
+
+
