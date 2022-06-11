@@ -40,15 +40,18 @@ lvim.plugins = {
     "theHamsta/nvim-dap-virtual-text",
     event = "BufRead",
     requires = {
-        "mfussenegger/nvim-dap"
+      "mfussenegger/nvim-dap"
     },
   },
   {
     "rcarriga/nvim-dap-ui",
     event = "BufRead",
     requires = {
-        "mfussenegger/nvim-dap"
+      "mfussenegger/nvim-dap"
     },
+    setup = function()
+      require("inclyc.core.dap-ui").setup()
+    end
   },
   {
     'lervag/vimtex',
@@ -60,8 +63,8 @@ lvim.plugins = {
   {
     'sindrets/diffview.nvim',
     event = 'BufRead',
-    requires = 'nvim-lua/plenary.nvim' ,
-    config = function ()
+    requires = 'nvim-lua/plenary.nvim',
+    config = function()
       require("inclyc.core.diffv").setup()
     end
   },
